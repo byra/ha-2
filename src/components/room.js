@@ -6,18 +6,14 @@ import {bindActionCreators} from 'redux'
 // Modules
 import {status, adult, children} from '../action';
 
-class Room extends Component {
-    constructor(props){
-        super(props);
-    }
-
+export class Room extends Component {
     changeRoom = () => {
         const {status, data} = this.props;
         status(data);
     };
 
     changeAdult = (event) => {
-        const {adult,data} = this.props;
+        const {adult, data} = this.props;
         data.adults = parseInt(event.target.value);
         adult(data);
     };
@@ -30,13 +26,13 @@ class Room extends Component {
 
     render() {
         const {data} = this.props;
-        const roomLayout = `roomLayout ${data.disabled ? 'roomLayoutInActive': ''}`;
-        const roomHeader = `${data.disabled ? 'roomHeaderInActive': 'roomHeader'}`;
+        const roomLayout = `roomLayout ${data.disabled ? 'roomLayoutInActive' : ''}`;
+        const roomHeader = `${data.disabled ? 'roomHeaderInActive' : 'roomHeader'}`;
         return (
             <div className={roomLayout}>
                 <div className={roomHeader}>
                     {data.room === 'Room 1' ? null : (
-                        <input type="checkbox" name="room"  onChange={this.changeRoom} defaultChecked={!data.disabled}
+                        <input type="checkbox" name="room" onChange={this.changeRoom} defaultChecked={!data.disabled}
                                className='headerCheckBox'/>)}
                     <header>{data.room}</header>
                 </div>
@@ -116,7 +112,7 @@ class Room extends Component {
             }
 
             `}</style>
-           </div>
+            </div>
         )
     }
 }

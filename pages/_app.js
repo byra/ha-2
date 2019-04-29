@@ -22,7 +22,6 @@ class MyApp extends App {
             </Container>
         );
     }
-
 }
 
 export default withRedux(makeStore)(MyApp);

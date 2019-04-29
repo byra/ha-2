@@ -1,29 +1,26 @@
 {
-  "name": "with-redux",
+  "name": "hilton-assignment-2",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
+    "test": "jest --coverage",
     "precommit": "jest",
     "prepush": "jest"
   },
   "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/enzyme.config.js"
+    ],
     "collectCoverageFrom": [
-      "./test/*js"
+      "./pages/*js",
+      "./src/**/*js"
     ],
     "coveragePathIgnorePatterns": [
-      "/node_modules/"
+      "/node_modules/",
+      "./pages/_app.js"
     ],
-    "coverageThreshold": {
-      "global": {
-        "statements": 100,
-        "branches": 100,
-        "functions": 100,
-        "lines": 100
-      }
-    },
     "reporters": [
       "default",
       [
@@ -35,7 +32,6 @@
     ]
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.0",
     "next": "^8.1.0",
     "next-redux-wrapper": "^3.0.0-alpha.2",
     "react": "^16.8.6",
@@ -48,10 +44,12 @@
   "devDependencies": {
     "@babel/core": "7.3.4",
     "babel-jest": "24.1.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "husky": "^2.1.0",
     "jest": "24.1.0",
-    "jest-html-reporter": "^2.5.0",
-    "react-testing-library": "^5.4.2"
+    "jest-html-reporter": "^2.5.0"
   },
+  "author": "Mahesh Byra",
   "license": "ISC"
 }

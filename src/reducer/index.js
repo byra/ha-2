@@ -1,6 +1,6 @@
 // Libraries
 import {actionTypes} from "../config/types";
-import {setState} from "../config";
+import {setState} from "../config/persist";
 
 export const reducer = (state = [], action) => {
 

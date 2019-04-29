@@ -6,11 +6,11 @@ import {bindActionCreators} from 'redux'
 // Modules
 import {start, save} from '../src/action';
 import Room from '../src/components/room';
-import {getState} from "../src/config";
+import {getState} from "../src/config/persist";
 
 
-class Index extends Component {
-    constructor(props){
+export class Index extends Component {
+    constructor(props) {
         super(props);
     }
 
@@ -26,10 +26,10 @@ class Index extends Component {
 
     render() {
         const {hotel} = this.props;
-         return (
+        return (
             <div className='layout'>
                 <div className='pageLayout'>
-                    {hotel.length !== 0 ? hotel.map((room) => <Room key={JSON.stringify(room)} data={room} />): null}
+                    {hotel.length !== 0 ? hotel.map((room) => <Room key={JSON.stringify(room)} data={room}/>) : null}
                 </div>
 
                 <input type="submit" value="Submit" className='submitLayout' onClick={this.saveRoom}/>

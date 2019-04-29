@@ -10,7 +10,6 @@ describe('actions', () => {
             type: actionTypes.START,
             payload:data.startData
         };
-        console.log(actions.start(data.startData), expectedAction);
         expect(actions.start(data.startData)).toEqual(expectedAction);
     });
 
@@ -18,7 +17,6 @@ describe('actions', () => {
         const expectedAction = {
             type: actionTypes.SAVE
         };
-        console.log(actions.save(), expectedAction);
         expect(actions.save()).toEqual(expectedAction);
     });
 
@@ -27,7 +25,6 @@ describe('actions', () => {
             type: actionTypes.PEOPLE,
             payload:data.adultData
         };
-        console.log(actions.adult(data.adultData), expectedAction);
         expect(actions.adult(data.adultData)).toEqual(expectedAction);
     });
 
@@ -36,16 +33,22 @@ describe('actions', () => {
             type: actionTypes.PEOPLE,
             payload:data.childernData
         };
-        console.log(actions.children(data.childernData), expectedAction);
         expect(actions.children(data.childernData)).toEqual(expectedAction);
     });
 
-    it('should create an action to update rooms', () => {
+    it('should create an action to active rooms', () => {
         const expectedAction = {
             type: actionTypes.STATUS,
-            payload:data.statusData
+            payload:data.statusActiveData
         };
-        console.log(actions.status(data.statusData), expectedAction);
-        expect(actions.status(data.statusData)).toEqual(expectedAction);
+        expect(actions.status(data.statusActiveData)).toEqual(expectedAction);
+    });
+
+    it('should create an action to disable rooms', () => {
+        const expectedAction = {
+            type: actionTypes.STATUS,
+            payload:data.statusDisableData
+        };
+        expect(actions.status(data.statusDisableData)).toEqual(expectedAction);
     });
 });
